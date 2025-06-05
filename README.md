@@ -15,13 +15,13 @@ DTree is a Python library for building and traversing trees. It provides a simpl
 
 To install DTree, run the following command:
 ```bash
-pip install dtree
+pip install tree-data
 ```
 ## Usage
 
 Here is an example of how to create and traverse a tree using DTree:
 ```python
-import dtree
+import tree-data
 
 # Create a tree from a dictionary
 data = {
@@ -36,7 +36,7 @@ data = {
 }
 
 # Traverse the tree using a generator
-for line in tree('my_tree', data):
+for line in tree-data.tree('my_tree', data):
     print(line)
 ```
 This will output the following tree structure:
@@ -53,7 +53,12 @@ my_tree:
 
 DTree supports different tree themes, including ASCII and Unicode. You can customize the theme by passing a `theme` parameter to the `tree` function:
 ```python
-tree = dtree.tree('my_tree', data, theme=dtree.themes.Unicode)
+for line in tree-data.tree(
+        'my_tree',
+        data,
+        theme=dtree.themes.Unicode
+):
+    print(line)
 ```
 This will output the following tree structure using Unicode characters:
 ```
@@ -72,7 +77,11 @@ You can customize the tree rendering by passing a `render` function to the `tree
 def custom_render(key, value):
     return f"{key} ({value})"
 
-for line in dtree.tree('my_tree', data, render=custom_render):
+for line in tree-data.tree(
+        'my_tree',
+        data,
+        render=custom_render
+):
     print(line)
 ```
 This will output the following tree structure with custom rendering:
