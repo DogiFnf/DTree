@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='pydtree',
-    version='1.0',
+    version='1.0.1',
     description='Python library for building and traversing trees',
     long_description=open('README.md', encoding='utf-8').read(),
     long_description_content_type='text/markdown',
