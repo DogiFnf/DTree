@@ -6,7 +6,7 @@ from .types import TreeNode, Theme
 
 
 def _render(key: str, value: Any) -> str:
-    return f"{key}: {value}"
+    return f'{key}: {value}'
 
 
 def tree(
@@ -27,12 +27,12 @@ def tree(
         str: Строка с информацией о текущем узле
     """
     if not isinstance(data, (dict, list, tuple)):
-        raise TypeError("Data must be a dict, list, or tuple")
+        raise TypeError('Data must be a dict, list, or tuple')
     render_func = render or _render
 
-    def _build_tree(data: Any, parent_key: str = "") -> TreeNode:
+    def _build_tree(data: Any, parent_key: str = '') -> TreeNode:
         """Рекурсивно строит дерево TreeNode из вложенных dict/list/tuple."""
-        node = TreeNode(value=parent_key or "root")
+        node = TreeNode(value=parent_key or 'root')
 
         if isinstance(data, dict):
             for key, value in data.items():
@@ -40,7 +40,7 @@ def tree(
                 node.children.append(child)
         elif isinstance(data, (list, tuple)):
             for idx, item in enumerate(data):
-                child = _build_tree(item, f"[{idx}]")
+                child = _build_tree(item, f'[{idx}]')
                 node.children.append(child)
         else:
             node.value = render_func(parent_key, data)
@@ -48,11 +48,11 @@ def tree(
         return node
 
     root = _build_tree(data)
-    yield f"{name}:"
+    yield f'{name}:'
 
     def _traverse(
         node: TreeNode,
-        prefix: str = "",
+        prefix: str = '',
         is_last: bool = True
     ) -> Generator[str, None, None]:
         if prefix:
@@ -60,7 +60,7 @@ def tree(
             line = prefix + connector + node.value
         else:
             line = node.value
-        if line != "root":
+        if line != 'root':
             yield line[4:]
 
         new_prefix = prefix + (theme.tab if is_last else theme.vertical)
