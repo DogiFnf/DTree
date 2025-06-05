@@ -1,7 +1,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name='dtree',
+    name='tree-data',
     version='1.0',
     description='Python library for building and traversing trees',
     long_description=open('README.md', encoding='utf-8').read(),
