@@ -1,11 +1,10 @@
-from typing import Any, Generator
-from types import FunctionType
+from typing import Any, Generator, Callable
 
 from . import themes
 from .types import TreeNode, Theme
 
 
-def _render(key: str, value: Any) -> str:
+def default_render(key: str, value: Any) -> str:
     return f'{key}: {value}'
 
 
@@ -13,7 +12,7 @@ def tree(
     name: str,
     data: Any,
     theme: Theme = themes.Ascii,
-    render: FunctionType = None
+    render: Callable = default_render
 ) -> Generator[str, None, None]:
     """
     Генератор для построения и обхода дерева данных
@@ -28,7 +27,6 @@ def tree(
     """
     if not isinstance(data, (dict, list, tuple)):
         raise TypeError('Data must be a dict, list, or tuple')
-    render_func = render or _render
 
     def _build_tree(data: Any, parent_key: str = '') -> TreeNode:
         """Рекурсивно строит дерево TreeNode из вложенных dict/list/tuple."""
@@ -43,7 +41,7 @@ def tree(
                 child = _build_tree(item, f'[{idx}]')
                 node.children.append(child)
         else:
-            node.value = render_func(parent_key, data)
+            node.value = render(parent_key, data)
 
         return node
 
