@@ -4,7 +4,7 @@ from typing import Any, List
 
 @dataclass
 class TreeNode:
-    """Узел дерева данных"""
+    """A node in a tree."""
     value: Any
     children: List['TreeNode'] = None
 
