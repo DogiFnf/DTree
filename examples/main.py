@@ -40,7 +40,7 @@ for line in tree('Set tree', data_set):
     print(line)
 
 
-print("\n" + '=' * 50 + "\n")
+print('\n' + '=' * 50 + '\n')
 
 # Depth limitation
 data = {
