@@ -15,7 +15,7 @@ data = {
 for line in tree('Dictionary tree', data):
     print(line)
 
-print("\n" + "="*50 + "\n")
+print('\n' + '=' * 50 + '\n')
 
 # Example with list
 data_list = {
@@ -29,7 +29,7 @@ data_list = {
 for line in tree('List tree', data_list):
     print(line)
 
-print("\n" + "="*50 + "\n")
+print('\n' + '=' * 50 + '\n')
 
 # Example with set
 data_set = {
@@ -40,7 +40,7 @@ for line in tree('Set tree', data_set):
     print(line)
 
 
-print("\n" + "="*50 + "\n")
+print("\n" + '=' * 50 + "\n")
 
 # Depth limitation
 data = {

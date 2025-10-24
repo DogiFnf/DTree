@@ -4,10 +4,10 @@ from pydtree import tree
 
 
 def filter_func(key: str, value: Any) -> Tuple[str, Any]:
-    if key.startswith("_"):
+    if key.startswith('_'):
         return None, None
-    if key in {"password", "secret", "token"}:
-        return key, "******"
+    if key in {'password', 'secret', 'token'}:
+        return key, '******'
     return key, value
 
 

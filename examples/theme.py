@@ -13,14 +13,14 @@ for line in tree('ASCII Theme', data, theme=themes.Ascii):
     print(line)
 
 
-print("\n" + "="*50 + "\n")
+print('\n' + '=' * 50 + '\n')
 
 # Using Unicode theme
 for line in tree('Unicode Theme', data, theme=themes.Unicode):
     print(line)
 
 
-print("\n" + "="*50 + "\n")
+print('\n' + '=' * 50 + '\n')
 
 # Custom theme
 MyTheme = Theme(

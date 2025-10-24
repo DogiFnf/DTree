@@ -11,29 +11,29 @@ def custom_render(
 ) -> str:
     if render_data.is_endpoint:  # If the node is an endpoint
         if isinstance(value, str):
-            return f"{key}: \"{value}\""
+            return f'{key}: \"{value}\"'
         elif isinstance(value, int):
-            return f"{key}: {value}"
+            return f'{key}: {value}'
         elif isinstance(value, float):
-            return f"{key}: {value}"
+            return f'{key}: {value}'
         elif isinstance(value, bool):
-            return f"{key}: {value}"
+            return f'{key}: {value}'
         else:
-            return f"{key}: {repr(value)} ({type(value).__name__})"
+            return f'{key}: {repr(value)} ({type(value).__name__})'
 
     else:  # If the node is not an endpoint
         if isinstance(value, dict):
-            return f"{key}: (dict with {len(value)} keys)"
+            return f'{key}: (dict with {len(value)} keys)'
         elif isinstance(value, list):
-            return f"{key}: (list with {len(value)} items)"
+            return f'{key}: (list with {len(value)} items)'
         elif isinstance(value, tuple):
-            return f"{key}: (tuple with {len(value)} items)"
+            return f'{key}: (tuple with {len(value)} items)'
         elif isinstance(value, set):
-            return f"{key}: (set with {len(value)} items)"
+            return f'{key}: (set with {len(value)} items)'
         elif isinstance(value, frozenset):
-            return f"{key}: (frozenset with {len(value)} items)"
+            return f'{key}: (frozenset with {len(value)} items)'
         else:
-            return f"{key}:"
+            return f'{key}:'
 
 
 data = {
