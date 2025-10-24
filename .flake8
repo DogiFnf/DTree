@@ -1,0 +1,10 @@
+[flake8]
+; * Main settings * ;
+max-line-length = 127
+ignore = EKW,ANN
+
+; * quotes * ;
+inline-quotes = single
+docstring-quotes = double
+multiline-quotes = single
+avoid-escape = True
